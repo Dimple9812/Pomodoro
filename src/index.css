@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply min-h-screen bg-[#f7f5ff] font-sans text-zinc-800 antialiased dark:bg-ink-950 dark:text-zinc-100;
+    background-image:
+      radial-gradient(1200px 600px at 0% -10%, rgba(196, 181, 253, 0.35), transparent 60%),
+      radial-gradient(900px 500px at 100% 0%, rgba(245, 208, 254, 0.35), transparent 60%);
+    background-attachment: fixed;
+  }
+
+  .dark body {
+    background-image:
+      radial-gradient(1200px 600px at 0% -10%, rgba(91, 33, 182, 0.18), transparent 60%),
+      radial-gradient(900px 500px at 100% 0%, rgba(134, 25, 143, 0.12), transparent 60%);
+  }
+
+  ::selection {
+    @apply bg-violet-200 text-violet-900;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-3xl border border-white/70 bg-white/75 shadow-soft backdrop-blur-xl dark:border-white/[0.06] dark:bg-ink-900/70 dark:shadow-none;
+  }
+
+  .focus-ring {
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-violet-500/70 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-ink-950;
+  }
+
+  .icon-button {
+    @apply grid h-10 w-10 place-items-center rounded-xl border border-zinc-200/80 bg-white/70 text-zinc-600 transition-colors hover:bg-white hover:text-zinc-900 focus-ring dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-zinc-300 dark:hover:bg-white/10 dark:hover:text-white;
+  }
+
+  .round-button {
+    @apply grid h-12 w-12 place-items-center rounded-full border border-zinc-200 bg-white text-zinc-600 shadow-sm transition-all hover:-translate-y-0.5 hover:text-violet-600 hover:shadow-md focus-ring disabled:pointer-events-none disabled:opacity-40 sm:h-14 sm:w-14 dark:border-white/10 dark:bg-white/[0.05] dark:text-zinc-300 dark:hover:text-violet-300;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-xl bg-violet-600 px-4 py-2 text-sm font-semibold text-white shadow-sm shadow-violet-600/30 transition-all hover:bg-violet-700 focus-ring disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 rounded-xl border border-zinc-200 bg-white px-4 py-2 text-sm font-medium text-zinc-700 transition-colors hover:border-zinc-300 hover:bg-zinc-50 focus-ring disabled:cursor-not-allowed disabled:opacity-50 dark:border-white/10 dark:bg-white/[0.04] dark:text-zinc-200 dark:hover:bg-white/10;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-ring disabled:cursor-not-allowed disabled:opacity-40 dark:text-zinc-400 dark:hover:bg-white/10 dark:hover:text-white;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center gap-2 rounded-xl border border-rose-200 bg-rose-50 px-4 py-2 text-sm font-medium text-rose-600 transition-colors hover:bg-rose-100 focus-ring disabled:cursor-not-allowed disabled:opacity-50 dark:border-rose-500/20 dark:bg-rose-500/10 dark:text-rose-300 dark:hover:bg-rose-500/20;
+  }
+
+  .kbd {
+    @apply inline-flex min-w-[1.75rem] items-center justify-center rounded-md border border-zinc-200 bg-white px-1.5 py-0.5 font-sans text-[11px] font-semibold text-zinc-600 shadow-[0_1px_0_rgba(0,0,0,0.06)] dark:border-white/10 dark:bg-white/5 dark:text-zinc-300;
+  }
+
+  .no-spinner::-webkit-outer-spin-button,
+  .no-spinner::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .no-spinner {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+}
