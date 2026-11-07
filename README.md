@@ -28,7 +28,7 @@ A polished, frontend-only Pomodoro productivity app built with **React, Vite and
 
 ## Getting started
 
-Requires **Node.js 18+**.
+Requires **Node.js 18+** and npm.
 
 ```bash
 npm install
