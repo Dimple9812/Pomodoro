@@ -155,3 +155,7 @@ Every read goes through a sanitiser (`utils/validation.js`). Corrupted JSON, wro
 React 18 · Vite 5 · Tailwind CSS 3 · lucide-react · Notifications API · Web Audio API · LocalStorage
 
 There are no other runtime dependencies. The charts are lightweight custom components.
+
+## Contributing
+
+Issues and pull requests are welcome. Before opening a PR, run `npm test` and `npm run build` to make sure the logic tests pass and the production build succeeds.
